@@ -47,21 +47,35 @@ public class MySQLQueries implements QueriesUtils {
 		StringBuilder sql = new StringBuilder("SELECT * FROM user_info WHERE ");
 				
 		if (!surnameValue.isEmpty() && !nameValue.isEmpty()){
-			sql.append(surnameKey).append(" = '").append(surnameValue);
-        	sql.append("' and ").append(nameKey).append(" = '").append(nameValue);
-        	sql.append("'");
+			findUserBySurnameAndName(sql, surnameKey, surnameValue, nameKey, nameValue);
 		}
 		else if (surnameValue != null && !surnameValue.isEmpty()){
-			sql.append(surnameKey).append(" = '").append(surnameValue).append("'");
+			findUserBySurname(sql, nameKey, nameValue);
 		}
 		else if (nameValue != null && !nameValue.isEmpty()){
-			sql.append(nameKey).append(" = '").append(nameValue).append("'");
+			findUserByName(sql, nameKey, nameValue);
 		}
 		
 		return sql.toString();
 	}
 	
+	private static void findUserBySurnameAndName(StringBuilder sql, String surnameKey, String surnameValue, String nameKey, String nameValue){
+			sql.append(surnameKey).append(" = '").append(surnameValue);
+		sql.append("' and ").append(nameKey).append(" = '").append(nameValue);
+		sql.append("'");
+	}
 	
+	
+	private static void findUserByName(StringBuilder sql, String nameKey, String nameValue){
+		sql.append(nameKey).append(" = '").append(nameValue).append("'");
+	}
+	 
+	 
+	 private static void findUserBySurname(StringBuilder sql, String surnameKey, String surnameValue){
+		sql.append(surnameKey).append(" = '").append(surnameValue).append("'");
+	}
+	 
+	 
 	private static List<User> createUsers(ResultSet rs) throws SQLException {
 		
 		List<User> result = new ArrayList<User>();

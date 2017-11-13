@@ -21,14 +21,14 @@ import by.tr.web.service.exceptions.ServiceException;
 public class Controller extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-    private static final String RESULT_PAGE = "/WEB-INF/information.jsp";
-    private static final String FOUND_ATTR = "user";
-    private static final String NOT_FOUND_ATTR = "error";
-    private static final String ERROR_MESSAGE = "User not found";
+	private static final String RESULT_PAGE = "/WEB-INF/information.jsp";
+	private static final String FOUND_ATTR = "user";
+	private static final String NOT_FOUND_ATTR = "error";
+	private static final String ERROR_MESSAGE = "User not found";
 	
-    public Controller() {
-        super();
-    }
+	public Controller() {
+		super();
+	}
 
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

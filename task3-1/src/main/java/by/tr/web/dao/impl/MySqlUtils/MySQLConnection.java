@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 public class MySQLConnection {
 	
+	// Later default values may be saved in xml file
 	private static final String HOST = "localhost";
 	private static final String DATABASE = "java_users";
 	private static final String USER_NAME = "root";

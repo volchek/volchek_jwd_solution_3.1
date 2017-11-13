@@ -9,7 +9,7 @@ public class User implements Serializable {
 
 	
 	public static enum Fields {
-		
+		// Later default values may be saved in xml file
 		SURNAME("surname"), NAME("name"), PHONE("phone"), EMAIL("email");
 		
 		String value;
