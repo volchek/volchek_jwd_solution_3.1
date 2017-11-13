@@ -14,15 +14,15 @@ public class MySQLQueries implements QueriesUtils {
 
 	public List<User> findUser(Connection conn, Map<String, String> userInfo) throws SQLException {
  
-        String query = createQuery(userInfo);
+		String query = createQuery(userInfo);
 		
-        Statement stm = conn.createStatement();
-        ResultSet rs = stm.executeQuery(query);
+		Statement stm = conn.createStatement();
+		ResultSet rs = stm.executeQuery(query);
  
-        List<User> result = createUsers(rs);
+		List<User> result = createUsers(rs);
         
-        return result;
-    }	
+		return result;
+	}	
 	
 	
 	private static String createQuery(Map<String, String> userInfo){
@@ -81,11 +81,11 @@ public class MySQLQueries implements QueriesUtils {
 		List<User> result = new ArrayList<User>();
 		
 		while(rs.next()){
-	        String surname  = rs.getString(User.Fields.SURNAME.getValue());
-	        String name = rs.getString(User.Fields.NAME.getValue());
-	        String phone = rs.getString(User.Fields.PHONE.getValue());
-	        String email = rs.getString(User.Fields.EMAIL.getValue());
-	        	        
+			String surname  = rs.getString(User.Fields.SURNAME.getValue());
+			String name = rs.getString(User.Fields.NAME.getValue());
+			String phone = rs.getString(User.Fields.PHONE.getValue());
+			String email = rs.getString(User.Fields.EMAIL.getValue());
+
 	 		User user = new User();
 			
 			user.setSurname(surname);
@@ -94,7 +94,7 @@ public class MySQLQueries implements QueriesUtils {
 			user.setEmail(email);
 			
 			result.add(user);
-	      }
+		}
 		
 		return result;
 	}
