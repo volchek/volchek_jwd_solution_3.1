@@ -7,7 +7,11 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private static final int PRIME = 31;
 
-	
+	private String surname;
+	private String name;
+	private String phone;
+	private String email;
+
 	public static enum Fields {
 		// Later default values may be saved in xml file
 		SURNAME("surname"), NAME("name"), PHONE("phone"), EMAIL("email");
@@ -23,11 +27,6 @@ public class User implements Serializable {
 		}
 	}
 	
-	private String surname;
-	private String name;
-	private String phone;
-	private String email;
-
 	
 	public User() {}
 	

@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import by.tr.web.controller.exceptions.ControllerException;
 import by.tr.web.entity.User;
 import by.tr.web.service.UserService;
 import by.tr.web.service.Factory.ServiceFactory;
 import by.tr.web.service.exceptions.ServiceException;
+import by.tr.web.controller.exceptions.ControllerException;
 
 
 public class Controller extends HttpServlet {
@@ -48,7 +48,7 @@ public class Controller extends HttpServlet {
 			}
 			else { throw new ControllerException(ERROR_MESSAGE); }
 		}
-		catch(ServiceException ex){
+		catch(ServiceException ex){			// Don't use mylticatch to support java 1.5
 			request.setAttribute(NOT_FOUND_ATTR, ex.getMessage());
 		}
 		catch(ControllerException ex){
