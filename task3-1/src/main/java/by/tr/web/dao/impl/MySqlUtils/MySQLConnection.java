@@ -18,13 +18,13 @@ public class MySQLConnection {
 
 	
 	public static Connection getMySQLConnection() throws ClassNotFoundException, SQLException {
-	     
-		Class.forName(DRIVER_CLASSNAME);
+	
+	Class.forName(DRIVER_CLASSNAME);
 		
 		String connectionURL = PREFIX + HOST + PORT + DATABASE;
-	  
+	
 		Connection connection = DriverManager.getConnection(connectionURL, USER_NAME, PASSWORD);
-	     
+	
 		return connection;
 	}
 		
